@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block main %}
+   <h1>Criar uma tarefa</h1>
+  <form action="{{ url_for('frontend.create_task') }}" method="POST">
+
+    {{ form.csrf_token }}
+    <div class="form-group">
+
+      {{ form.title.label(class='form-label') }}<br>
+      {{ form.title(class="form-control") }}<br>
+
+      {% for error in form.title.errors %}
+        <span class="text-danger">{{ error }}</span><br>
+      {% endfor %}
+    </div>
+    <div class="mb-3">
+        {{ form.description.label(class='form-label') }}<br>
+        {{ form.description(class="form-control", rows=4) }}<br>
+
+        {% for error in form.description.errors %}
+        <span class="text-danger">{{ error }}</span><br>
+      {% endfor %}
+    </div>
+  <br>
+    <button type="submit" class="btn btn-primary">Criar</button>
+  </form>
+{% endblock %}
