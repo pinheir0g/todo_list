@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% block main %}
-   <h1>Criar uma tarefa</h1>
+   <h1>Criar Tarefa</h1>
   <form action="{{ url_for('frontend.create_task') }}" method="POST">
 
     {{ form.csrf_token }}

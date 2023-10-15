@@ -1,5 +1,5 @@
-from todo_app.db import db
-from todo_app.db import models  # noqa
+from todo_list.db import db
+from todo_list.db import models  # noqa
 
 
 def init_app(app):

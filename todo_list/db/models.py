@@ -1,4 +1,4 @@
-from todo_app.db import db
+from todo_list.db import db
 
 
 class Todo(db.Model):

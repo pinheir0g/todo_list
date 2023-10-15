@@ -1,9 +1,9 @@
 import requests
 from flask import Blueprint, render_template, redirect, url_for, flash, current_app
-from todo_app.serializers.serializers import Task
-from todo_app.db import db
-from todo_app.db.models import Todo
-from todo_app.form import TaskForm
+from todo_list.serializers.serializers import Task
+from todo_list.db import db
+from todo_list.db.models import Todo
+from todo_list.form import TaskForm
 
 
 bp_render = Blueprint("frontend", __name__)
@@ -28,7 +28,7 @@ def create_task():
             title=form.title.data, description=form.description.data
         ).dict()
         response = requests.post(f"{api_url}/tasks", json=data)
-        if response.status_code == 200:
+        if response.status_code == 201:
             flash("Tarefa criada com sucesso!", category="success")
             return redirect(url_for("frontend.home"))
     return render_template("task_form.html", form=form)

@@ -1,9 +1,9 @@
 from flask import Blueprint, jsonify, request
-from todo_app.db.models import Todo
-from todo_app.db import db
-from todo_app.serializers.serializers import Task, Tasks
+from todo_list.db.models import Todo
+from todo_list.db import db
+from todo_list.serializers.serializers import Task, Tasks
 from flask_pydantic_spec import Response, Request
-from todo_app.serializers import spec
+from todo_list.serializers import spec
 
 
 bp = Blueprint("todo", __name__)
@@ -46,7 +46,7 @@ def add_task():
     task = Todo(**body)
     db.session.add(task)
     db.session.commit()
-    return jsonify(task.to_dict())
+    return jsonify(task.to_dict()), 201
 
 
 @bp.route("/tasks/<int:id>", methods=["PUT"])
