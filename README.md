@@ -1,4 +1,4 @@
-# To-Do App
+# To-Do List
 
 Aplicativo de tarefas onde o usuário consegue adicionar e alterar tarefas.
 
@@ -10,7 +10,6 @@ Funcionalidades principais de CRUD, criar, ler, editar e deletar uma tarefa.
 - SQLAlchemy
 - Pydantic
 - Bootstrap
-- HTML
 
 ## Requesitos:
 Aplicação esta sendo gerenciada pelo poetry.
@@ -49,12 +48,11 @@ make run
 Ou fazer manualmente:
 
 ```bash
-export FLASK_APP=todo_app/app.py
+export FLASK_APP=todo_list/app.py
 export FLASK_DEBUG=1
 flask run
 ```
 
-Acessar http://localhost:5000/apidoc/swagger para ter toda a documentação da api.
+Enquanto o projeto estiver rodando acessar [Doc Api](http://localhost:5000/apidoc/swagger) para ter toda a documentação da api.
 
 // Em desenvolvimento
-
